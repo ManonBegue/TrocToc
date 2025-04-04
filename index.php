@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p>Vous avez recherché le service : <strong>" . htmlspecialchars($service) . "</strong> à <strong>" . htmlspecialchars($location) . "</strong></p>";
 }
 
-$villes = ["Lyon", "Marseille", "Toulouse", "Bordeaux", "Lille", "Nice", "Nantes", "Strasbourg", "Grenoble", "Rennes"];
+$villes = ["Lyon", "Marseille", "Toulouse", "Bordeaux", "Lille", "Nice", "Nantes", "Strasbourg", "Grenoble", "Rennes","Bidart"];
 
 function villeAleatoire($villes) {
     return $villes[array_rand($villes)];
@@ -187,7 +187,7 @@ function villeAleatoire($villes) {
             <div class="nom-note">Sylviane <span class="note">5/5</span></div>
             <div class="titre">Cherche Garde chien à Albi</div>
             <div class="description">"Bonjour, Je n'ai pas noté les personnes ayant répondu à une possibilité de garde de chiens. Recherche pour une semaine en Mai"</div>
-            <div class="ville">Ville aléatoire : <strong><?php echo villeAleatoire($villes); ?></strong></div>
+            <div class="ville">Ville :<strong>Bidart</strong></div>
         </div>
 
         <div class="annonce">
@@ -195,7 +195,7 @@ function villeAleatoire($villes) {
             <div class="nom-note">Delphine <span class="note">5/5</span></div>
             <div class="titre">Cherche Lavage auto à Saint-Raphaël</div>
             <div class="description">"Bonjour, Je cherche une entreprise pour le nettoyage de mon véhicule interieur exterieur à domicile svp"</div>
-            <div class="ville">Ville aléatoire : <strong><?php echo villeAleatoire($villes); ?></strong></div>
+            <div class="ville">Ville :<strong>Toulouse</strong></div>
         </div>
     </div>
 </div>
