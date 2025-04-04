@@ -183,20 +183,23 @@ function villeAleatoire($villes) {
  
     <div class="annonces">
         <div class="annonce">
-            <div class="heure">Aujourd'hui à 10h51</div>
+            <div class="heure">
+                <span>Aujourd'hui à 10h51</span>
+                <span><strong>Bidart</strong></span>
+            </div>
             <div class="nom-note">Sylviane <span class="note">5/5</span></div>
-            <div class="titre">Cherche Garde chien </div>
-            <div class="ville">Ville : <strong>Bidart</strong></div>
+            <div class="service-category">Animaux - Cherche Garde chien</div>
             <div class="description">"Bonjour, Je n'ai pas noté les personnes ayant répondu à une possibilité de garde de chiens. Recherche pour une semaine en Mai"</div>
         </div>
- 
+
         <div class="annonce">
-            <div class="heure">Aujourd'hui à 10h50</div>
+            <div class="heure">
+                <span>Aujourd'hui à 10h50</span>
+                <span><strong>Toulouse</strong></span>
+            </div>
             <div class="nom-note">Delphine <span class="note">5/5</span></div>
-            <div class="titre">Cherche Lavage auto </div>
-            <div class="ville">Ville : <strong>Toulouse</strong></div>
-            <div class="description">"Bonjour, Je cherche une entreprise pour le nettoyage de mon véhicule interieur exterieur à domicile svp"</div>
-           
+            <div class="service-category">Services véhicules - Cherche Lavage auto</div>
+            <div class="description">"Bonjour, Je cherche une entreprise pour le nettoyage de mon véhicule intérieur extérieur à domicile svp"</div>
         </div>
     </div>
 </div>
