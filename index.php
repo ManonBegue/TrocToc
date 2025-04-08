@@ -175,7 +175,7 @@ function villeAleatoire($villes) {
                 <option value="Animaux">Animaux</option>
                 <option value="Courses">Courses</option>
             </select>
-            <input type="text" name="location" placeholder="Ville ou CP">
+            <input type="text" name="location" placeholder="Ville">
             <button type="submit">Rechercher</button>
         </div>
         <div class="form-note">Service entre particuliers</div>
