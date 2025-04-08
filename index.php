@@ -12,7 +12,7 @@ function villeAleatoire($villes) {
 }
 ?>
  
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@ function villeAleatoire($villes) {
             margin: 0;
             padding: 0;
         }
- 
+
         .header {
             display: flex;
             align-items: center;
@@ -34,11 +34,11 @@ function villeAleatoire($villes) {
             position: relative;
             border-bottom: 1px solid #ddd;
         }
- 
+
         .logo {
             height: 60px;
         }
- 
+
         .header-title {
             position: absolute;
             left: 50%;
@@ -47,44 +47,44 @@ function villeAleatoire($villes) {
             font-weight: bold;
             color: #333;
         }
- 
+
         .header-buttons {
             display: flex;
             gap: 10px;
         }
- 
+
         .header-buttons button {
             padding: 8px 15px;
             font-size: 14px;
             cursor: pointer;
         }
- 
+
         .container {
             width: 60%;
             margin: auto;
             padding: 40px 20px;
         }
- 
+
         .form-row {
             display: flex;
             gap: 10px;
             justify-content: flex-start;
             align-items: center;
         }
- 
+
         select, input, button[type="submit"] {
             padding: 10px;
             font-size: 14px;
         }
- 
+
         select, input {
             flex: 1;
         }
- 
+
         button[type="submit"] {
             white-space: nowrap;
         }
- 
+
         .form-note {
             margin-top: 10px;
             display: inline-block;
@@ -96,14 +96,14 @@ function villeAleatoire($villes) {
             width: 33.3%;
             text-align: center;
         }
- 
+
         .annonces {
             margin-top: 30px;
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
- 
+
         .annonce {
             border: 1px solid #ccc;
             border-radius: 10px;
@@ -111,36 +111,50 @@ function villeAleatoire($villes) {
             background-color: #f9f9f9;
             box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
         }
- 
+
         .heure {
             font-size: 0.9em;
             color: #888;
             margin-bottom: 5px;
         }
- 
+
         .nom-note {
             font-weight: bold;
             font-size: 1.1em;
             margin-bottom: 5px;
         }
- 
+
         .note {
             font-weight: normal;
-            color: #009900;
             margin-left: 5px;
         }
- 
+
+        .note.rouge {
+            color: red;
+            font-weight: bold;
+        }
+
+        .note.orange {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .note.vert {
+            color: green;
+            font-weight: bold;
+        }
+
         .titre {
             font-size: 1em;
             font-weight: bold;
             margin-bottom: 5px;
         }
- 
+
         .description {
             font-style: italic;
             color: #444;
         }
- 
+
         .ville {
             margin-top: 10px;
             font-size: 0.9em;
@@ -149,7 +163,7 @@ function villeAleatoire($villes) {
     </style>
 </head>
 <body>
- 
+
 <div class="header">
     <img src="pictures/logo.png" alt="Logo TrocToc" class="logo">
     <div class="header-title">TrocToc</div>
@@ -158,7 +172,7 @@ function villeAleatoire($villes) {
         <button onclick="location.href='connexion.php'">Se connecter</button>
     </div>
 </div>
- 
+
 <div class="container">
     <form method="POST">
         <div class="form-row">
@@ -180,7 +194,7 @@ function villeAleatoire($villes) {
         </div>
         <div class="form-note">Service entre particuliers</div>
     </form>
- 
+
     <div class="annonces">
         <div class="annonce">
             <div class="heure">
@@ -201,9 +215,55 @@ function villeAleatoire($villes) {
             <div class="service-category">Services véhicules - Cherche Lavage auto</div>
             <div class="description">"Bonjour, Je cherche une entreprise pour le nettoyage de mon véhicule intérieur extérieur à domicile svp"</div>
         </div>
+
+        <div class="annonce">
+            <div class="heure">
+                <span>Vendredi à 9h50</span>
+                <span><strong>Toulouse</strong></span>
+            </div>
+            <div class="nom-note">Francis <span class="note">3/5</span></div>
+            <div class="service-category">Services véhicules - Cherche Lavage auto</div>
+            <div class="description">"Bonjour, Je cherche une entreprise pour le nettoyage de mon véhicule intérieur extérieur à domicile svp"</div>
+        </div>
+
+        <div class="annonce">
+            <div class="heure">
+                <span>Jeudi à 15h50</span>
+                <span><strong>Bidart</strong></span>
+            </div>
+            <div class="nom-note">Patxi <span class="note">1/5</span></div>
+            <div class="service-category">Services véhicules - Cherche Lavage auto</div>
+            <div class="description">"Bonjour, Je cherche une entreprise pour le nettoyage de mon véhicule intérieur extérieur à domicile svp"</div>
+        </div>
+
+        <div class="annonce">
+            <div class="heure">
+                <span>Mardi à 13h51</span>
+                <span><strong>Lyon</strong></span>
+            </div>
+            <div class="nom-note">Victoire <span class="note">5/5</span></div>
+            <div class="service-category">Animaux - Cherche Garde chien</div>
+            <div class="description">"Bonjour, Je n'ai pas noté les personnes ayant répondu à une possibilité de garde de chiens. Recherche pour une semaine en Mai"</div>
+        </div>
+
     </div>
 </div>
- 
+
+<script>
+    document.querySelectorAll('.note').forEach(note => {
+        const match = note.textContent.trim().match(/^(\d)(?:\/5)?$/);
+        if (match) {
+            const valeur = parseInt(match[1]);
+            if (valeur <= 2) {
+                note.classList.add('rouge');
+            } else if (valeur === 3) {
+                note.classList.add('orange');
+            } else if (valeur >= 4) {
+                note.classList.add('vert');
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
- 
